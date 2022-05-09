@@ -1,0 +1,27 @@
+delta_x_speed: .1
+delta_y_speed: .1
+delta_theta_speed: 0.05
+
+max_lin_vel: 10
+max_ang_vel: 10
+delta_y_speed: .1
+delta_theta_speed: 0.05
+
+max_lin_vel: 10
+max_ang_vel: 10
+delta_y_speed: .1
+delta_theta_speed: 0.05
+
+max_lin_vel: 10
+max_ang_vel: 10
+delta_y_speed: .1
+delta_theta_speed: 0.05
+
+max_lin_vel: 10
+max_ang_vel: 10
+delta_y_speed: .1
+delta_theta_speed: 0.05
+
+max_lin_vel: 10
+max_ang_vel: 10
+

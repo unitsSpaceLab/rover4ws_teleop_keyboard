@@ -1,0 +1,6 @@
+<launch>
+<!-- parameters -->
+<rosparam command="load" file="$(find teleop_mio)/config/params.yaml"/>
+<!-- start node -->
+<node pkg="teleop_mio" type="teleop.py" name="teleop_controller" respawn="false" output="screen"> </node>
+</launch>
