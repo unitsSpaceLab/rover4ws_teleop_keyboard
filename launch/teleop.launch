@@ -1,6 +1,6 @@
 <launch>
 <!-- parameters -->
-<rosparam command="load" file="$(find teleop_mio)/config/params.yaml"/>
+<rosparam command="load" file="$(find robot4ws_teleop_keyboard)/config/params.yaml"/>
 <!-- start node -->
-<node pkg="teleop_mio" type="teleop.py" name="teleop_controller" respawn="false" output="screen"> </node>
+<node pkg="robot4ws_teleop_keyboard" type="teleop.py" name="teleop_controller" respawn="false" output="screen"> </node>
 </launch>

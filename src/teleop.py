@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3.8
 
 import rospy
 from geometry_msgs.msg import Twist
@@ -50,7 +50,7 @@ def on_release(key):
 
 if __name__ == '__main__':
     rospy.init_node('teleop_node', anonymous=True) #Start ROS node
-    vel_publisher = rospy.Publisher('/cmd_vel', Twist) #Create publisher on /cmd_vel topic
+    vel_publisher = rospy.Publisher('/cmd_vel', Twist,queue_size=1) #Create publisher on /cmd_vel topic
     global current_msg
     current_msg = Twist() #Initialize empty message
 
@@ -60,14 +60,28 @@ if __name__ == '__main__':
     delta_theta = rospy.get_param("delta_theta_speed", default=0.1)
     max_vel_lin = rospy.get_param("max_lin_vel", default=1e9)
     max_vel_ang = rospy.get_param("max_ang_vel", default=1e9)
+    cmd_publish_rate = rospy.get_param("cmd_publish_rate", default=10)
+
+
 
 
     #Start keyboard listener
     listener = keyboard.Listener(on_press=on_press, on_release=on_release)
     listener.start()
 
+
+    time_start = rospy.Time.now().to_sec()
+    period = 1/cmd_publish_rate
+
+    debug_time = False
+
     while not rospy.is_shutdown():
-        vel_publisher.publish(current_msg)
+        if (rospy.Time.now().to_sec() - time_start >= period):
+            vel_publisher.publish(current_msg)
+            time_start=rospy.Time.now().to_sec()
+
+        if debug_time:
+            print(rospy.Time.now().to_sec() - time_start)
 
     rospy.spin()
 
