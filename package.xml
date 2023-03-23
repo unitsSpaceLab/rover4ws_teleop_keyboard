@@ -4,6 +4,7 @@
   <version>1.1.0</version>
   <description>This is an example of a ROS based application. It implements a custom tele-operation node for controlling mobile robots</description>
   <maintainer email="matteo.caruso@phd.units.it">Matteo Caruso</maintainer>
+  <author email="matteo.caruso@phd.units.it">Matteo Caruso</author>
 
   <license>GPLv3</license>
 

@@ -12,4 +12,12 @@ catkin_make
 
 
 ## Usage
+The basic usage of this repository is done as follows,
+
+```roslaunch rover4ws_teleop_keyboard teleop.launch```
+
+
+
+
+
 

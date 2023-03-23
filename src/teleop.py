@@ -1,5 +1,11 @@
 #!/usr/bin/env python3.8
 
+"""
+  @author Matteo Caruso
+  @email matteo.caruso@phd.units.it
+  @email matteo.caruso1993@gmail.com
+"""
+
 import rospy
 from geometry_msgs.msg import Twist
 from pynput import keyboard
