@@ -7,5 +7,8 @@
 <!-- parameters -->
 <rosparam command="load" file="$(find robot4ws_teleop_keyboard)/config/params.yaml"/>
 <!-- start node -->
-<node pkg="robot4ws_teleop_keyboard" type="teleop.py" name="teleop_controller" respawn="false" output="screen"> </node>
+<arg name="env" default="/usr/bin/env python3.8"/>
+<node pkg="robot4ws_teleop_keyboard" type="teleop.py" name="teleop_controller" respawn="false" output="screen" launch-prefix="$(arg env)"> 
+  <remap from="/cmd_vel" to="/Archimede/cmd_vel"/>
+</node>
 </launch>
